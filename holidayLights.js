@@ -290,10 +290,10 @@ const teamMembers =
 + " Mike McCamon,"
 + " Steve Bullard,"
 + " Kyle Weafer,"
-+ " Foley Equipment,"
++ " Foley Rental & Josh Rose,"
 + " Pretech Precast Concrete,"
 + " Enerfab Midwest & Brian Jackson,"
-+ " Lowes on Stateline"
++ " Lowes on Stateline,"
 + " T.J. Kilian and KJO Media,"
 + " Jolt Lighting,"
 + " Gieske Custom Metal Fabricators,"
@@ -324,11 +324,20 @@ function configureHolidayScenes(gridzilla) {
   const instructions2Banner = new BannerScene(gridzilla, onPaused,
     {
       line1: "Visit farmsteadlights.com",
-      line2: "to display messages",
+      line2: "to send suggestions to the elves",
+      //line2: "to display messages",
       line3: "and see the song list.",
       color: new Color(colorNameToRgb["Dark Red"])
     });
 
+    const instructions3Banner = new BannerScene(gridzilla, onPaused,
+      {
+        line1: "The message and cheer features ",
+        line2: "are currently disabled.  We",
+        line3: "hope to bring those back soon.",
+        color: new Color(colorNameToRgb["Dark Red"])
+      });
+  
   const hashtagBanner = new BannerScene(gridzilla, onPaused,
     {
       line1: "#farmsteadlights",
@@ -378,11 +387,20 @@ function configureHolidayScenes(gridzilla) {
         { name: "Sleigh Ride 268x36 (2019 V1).png" },
     
         { name: "brown paper packages.png" },
-        { name: "jinglebells.png" },
-    
-        { name: "Enerfab Logo 36x168.gif" },
+        { name: "jinglebells.png" }
+      ]
+    });
+
+  //show holiday images
+  const thankYouImageScene = new ImageScene(gridzilla, onPaused,
+    {
+      period: 10000,
+      perImagePeriod: 9000,    
+      imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
+        { name: "Enerfab Logo 36x168.gif" },
         { name: "Jolt Lighting Logo 36x106.gif" },
+        { name: "Foley Logo 36x168.gif" },
         { name: "Pretech Logo 36x168.gif" },
         { name: "Lowes_78x36_V2.png"}
       ]
@@ -431,11 +449,13 @@ function configureHolidayScenes(gridzilla) {
     welcomeBanner,
     instructionsBanner,
     instructions2Banner,
+    instructions3Banner,
     hashtagBanner,
     // goChiefsScene,
-    messagesScene,
-    cheersScene,
+    //messagesScene,
+    //cheersScene,
     holidayImageScene,
+    thankYouImageScene,
     // preSnakesBanner,
     // snakeScene,
     thankYouScene,
@@ -499,13 +519,24 @@ function configureEosScenes(gridzilla, facade) {
   // ];
 
   
-  const goChiefsScene = new ImageScene(gridzilla, onPaused,
+  // const goChiefsScene = new ImageScene(gridzilla, onPaused,
+  //   {
+  //     period: 10000,
+  //     imagesConfiguration: [
+  //       { name: "Go Chiefs.png" }
+  //     ]
+  //   });
+
+  const goChiefsScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      period: 10000,
-      imagesConfiguration: [
-        { name: "Go Chiefs.png" }
-      ]
-    });
+      scrollText: "   Go Chiefs!   Go Chiefs!   Go Chiefs!   Go Chiefs!   Go Chiefs!       ",
+      color: new Color(colorNameToRgb["Dark Red"])
+    },
+    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Dark Red"]) } ),
+    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Dark Red"]) } )
+  );
 
   // create scenes
   const eosMessageScene = new ScrollingTextScene(gridzilla, null, onPaused,
@@ -513,9 +544,9 @@ function configureEosScenes(gridzilla, facade) {
       // imageNames: eosImageNames,
       headerText: "Thanks for visiting!",
       scrollText: "             "
-       + "The Holiday Lights show has ended."
-       + "Join us in February to display your Valentines! "
-       + "Deanna Rose Children's Farmstead will reopen April 1st!"
+       + "The Holiday Lights show has ended. See you next year.    "
+       //+ "Join us in February to display your Valentines! "
+       //+ "Deanna Rose Children's Farmstead will reopen April 1st!"
        + "                "
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
@@ -524,23 +555,23 @@ function configureEosScenes(gridzilla, facade) {
       {color: new Color(255, 255, 255)} )
   );
 
-  const thankYouScene = new ScrollingTextScene(gridzilla, null, onPaused,
-    {
-      period: 180*60*1000,
-      headerText: "Thanks!",
-      scrollText: teamMembers,
-      minimumInterval: 5*60*1000
-    },
-    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      {color: new Color(255, 255, 255)} ),
-    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      {color: new Color(255, 255, 255)} )
-  );
+  // const thankYouScene = new ScrollingTextScene(gridzilla, null, onPaused,
+  //   {
+  //     period: 180*60*1000,
+  //     headerText: "Thanks!",
+  //     scrollText: teamMembers,
+  //     minimumInterval: 5*60*1000
+  //   },
+  //   Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+  //     {color: new Color(255, 255, 255)} ),
+  //   Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+  //     {color: new Color(255, 255, 255)} )
+  // );
 
   scenes = [
     eosMessageScene,
     goChiefsScene,
-    thankYouScene
+    //thankYouScene
   ];
 
 }
