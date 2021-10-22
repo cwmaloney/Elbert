@@ -621,23 +621,41 @@ function configureFontTestScenes(gridzilla, facade) {
 
 }
 
-function configureHalloweenScenes(gridzilla) {
+function configureNolfScenes(gridzilla) {
 
   // create scenes
   const welcomeBanner = new BannerScene(gridzilla, onPaused,
     {
       line1: "Welcome to",
-      line2: "Holiday Lights",
-      line3: "on Farmstead Lane   ",
+      line2: "Deanna Rose",
+      line3: "Children's Farmstead",
       color: new Color(colorNameToRgb["White"]),
       period: 3000
     });
 
   // create scenes
-  const halloweenMessageScene = new ScrollingTextScene(gridzilla, null, onPaused,
+  const nolfMessageScene1 = new ScrollingTextScene(gridzilla, null, onPaused,
     {
       // imageNames: eosImageNames,
-      headerText: "Happy Halloween!",
+      headerText: "Night of the Living Farm",
+      scrollText: "             "
+       + " Friday and Saturday Nights "
+        + " October 22, 23, 29, & 30 "
+        + " 5PM to 9PM"
+        + " Purchase tickets online at drfarmstead.org",
+       color: new Color(colorNameToRgb["Orange"])
+      },
+      Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Orange"]) } ),
+      Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Orange"]) } )
+    );
+
+  // create scenes
+  const nolfMessageScene2 = new ScrollingTextScene(gridzilla, null, onPaused,
+    {
+      // imageNames: eosImageNames,
+      headerText: "Welcome!",
       scrollText: "             "
        + "          The Holiday Lights show begins Thanksgiving evening.  "
        + "The elves are working hard to get the show ready.  "
@@ -651,8 +669,8 @@ function configureHalloweenScenes(gridzilla) {
         { color: new Color(colorNameToRgb["Orange"]) } )
     );
 
-  //show Halloween images
-  const halloweenImageScene = new ImageScene(gridzilla, onPaused,
+  //show NOLF images
+  const nolfImageScene = new ImageScene(gridzilla, onPaused,
     {
       period: 10000,
       perImagePeriod: 9000,
@@ -689,10 +707,10 @@ function configureHalloweenScenes(gridzilla) {
   
   scenes = [
     welcomeBanner,
-    halloweenMessageScene,
-    halloweenImageScene,
+    nolfMessageScene1,
+    nolfImageScene,
     goChiefsScene,
-    halloweenImageScene,
+    nolfImageScene,
     goSportingScene
   ];
 
@@ -802,14 +820,14 @@ BitmapBuffer.initializeFonts().then( () =>  {
     // configure the scenes
     let show = EnvConfig.get().show;
     if (!show) {
-      show = "Holiday";
+      show = "NOLF";
     }
     if (show === "Valentine")
       configureValentineScenes(gridzilla, facade);
     else if (show === "Holiday")
       configureHolidayScenes(gridzilla);
-      else if (show === "Halloween")
-      configureHalloweenScenes(gridzilla);
+      else if (show === "NOLF")
+      configureNolfScenes(gridzilla);
    else if (show === "PreSeason")
       configurePreSeasonScenes(gridzilla);
     else if (show === "EOS")
