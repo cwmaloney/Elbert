@@ -302,16 +302,16 @@ const teamMembers =
   + "                           .";
 
 const companies =
-  ".                             "
-  + " Foley Rental & Josh Rose,"
+  "-                             "
+  + " Foley Rental,"
   + " Equipment Share,"
   + " Pretech Precast Concrete,"
-  + " Enerfab Midwest & Brian Jackson,"
+  + " Enerfab Midwest,"
   + " T.J. Kilian and KJO Media,"
-  + " Jolt Lighting,"
+  + " & Jolt Lighting"
   // + " Lowes on Stateline,"
-  // + " Gieske Custom Metal Fabricators,"
-  + "                           .";
+  // + " & Gieske Custom Metal Fabricators,"
+  + "                           -";
 
 //////////////////////////////////////////////////////////////////////////////
 // scene configuration
