@@ -378,7 +378,7 @@ function configureHolidayScenes(gridzilla) {
       perImagePeriod: 9000,
       imagesConfiguration: [
         { name: "Christmas Snoopy Tree 168x36 (2019 V1).png" },
-        { name: "Christmas Train 830x36 (2019 V7).png", period: 29000 },
+        { name: "Train_2021.png", period: 29000 },
         { name: "Sleigh 168x36 (2019 V3).png" },
         { name: "Snow Landscape 168x36 (2019 V3 Blue Background).png" },
         { name: "Snow Landscape Red 168x36 (2019 V1).png" },
@@ -756,7 +756,7 @@ function configurePreSeasonScenes(gridzilla) {
         { name: "snowman.png" },
         { name: "snowflake.png" },
         { name: "Christmas Snoopy Tree 168x36 (2019 V1).png" },
-        { name: "Christmas Train 830x36 (2019 V7).png", period: 29000 },
+        { name: "Train_2021.png", period: 29000 },
       ]
     });
 
