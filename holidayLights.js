@@ -280,14 +280,14 @@ const facadeDefaults = {
   }
 };
 
-const holidaySampleMessages = [
-  { sample: true, recipient: "Everyone", message: "Happy Holidays", sender: "Team Holiday Lights", color: "Teal" },
-  { sample: true, recipient: "Amy", message: "Happy Winter Solstice", sender: "Sheldon", color: "Cornflower Blue" },
-  { sample: true, recipient: "Lucy", message: "Happy Holidays", sender: "Charlie", color: "Purple" },
-  { sample: true, recipient: "Santa", message: "Merry Christmas", sender: "Buddy", color: "Red" },
-  { sample: true, recipient: "Everyone", message: "Live Long and Prosper", sender: "Spock", color: "Lime" },
-  { sample: true, recipient: "Mila and Emmy", message: "Merry Christmas", sender: "Rachel & Chris", color: "Pink" },
-];
+// const holidaySampleMessages = [
+//   { sample: true, recipient: "Everyone", message: "Happy Holidays", sender: "Team Holiday Lights", color: "Teal" },
+//   { sample: true, recipient: "Amy", message: "Happy Winter Solstice", sender: "Sheldon", color: "Cornflower Blue" },
+//   { sample: true, recipient: "Lucy", message: "Happy Holidays", sender: "Charlie", color: "Purple" },
+//   { sample: true, recipient: "Santa", message: "Merry Christmas", sender: "Buddy", color: "Red" },
+//   { sample: true, recipient: "Everyone", message: "Live Long and Prosper", sender: "Spock", color: "Lime" },
+//   { sample: true, recipient: "Mila and Emmy", message: "Merry Christmas", sender: "Rachel & Chris", color: "Pink" },
+// ];
 
 const teamMembers =
   ".                             Mark Callegari (The Creator of Holiday Lights),"
@@ -400,19 +400,15 @@ function configureScenes(gridzilla, facade) {
   // show logos
   const logosScene = new ImageScene(gridzilla, onPaused,
     {
-      period: 10000,
-      perImagePeriod: 9000,
+      period: 10500,
+      perImagePeriod: 5000,
       imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
         { name: "Enerfab Logo 36x168.gif" },
-        { name: "Jolt Lighting Logo 36x106.gif" },
-        { name: "Foley Logo 36x168.gif" },
-        { name: "Pretech Logo 36x168.gif" },
-        //{ name: "Lowes_78x36_V2.png"},
         { name: "Equipment Share Logo V1 (168x36).png" },
-        //{ name: "Equipment Share Logo V2 (168x36).png" },
-        { name: "Equipment Share Logo V1 (On Gray) (168x36).png" },
-        //{ name: "Equipment Share Logo V2 (On Gray) (168x36).png" }
+        { name: "Jolt Lighting Logo 36x106.gif" },
+        { name: "Pretech Logo 36x168.gif" },
+        // { name: "Lowes_78x36_V2.png"},
       ]
     });
 
@@ -429,7 +425,7 @@ function configureScenes(gridzilla, facade) {
 
   const thankYouScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      period: 4 * 60 * 1000,
+      //period: 4 * 60 * 1000,
       headerText: "Thanks!",
       scrollText: teamMembers,
       minimumInterval: 9 * 60 * 1000,
@@ -443,7 +439,7 @@ function configureScenes(gridzilla, facade) {
 
   const thankYouCompaniesScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      period: 4 * 60 * 1000,
+      //period: 4 * 60 * 1000,
       headerText: "Thanks!",
       scrollText: companies,
       minimumInterval: 9 * 60 * 1000,
@@ -457,20 +453,20 @@ function configureScenes(gridzilla, facade) {
 
   const preSeasonMessageScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      period: 120000,
-      headerText: "Happy Pre-Holidays!",
+      period: 20000,
+      headerText: "Happy Holidays!",
       scrollText: "             "
-        + "         "
+        + "                     "
         + "The Holiday Lights show begins Thanksgiving evening.  "
         + "The elves are working hard to get the show ready.  "
         + "Please come back to see the show."
-        + "             ",
+        + "                     ",
       color: new Color(colorNameToRgb["Blue"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Green"]) }),
+      { color: new Color(colorNameToRgb["White"]) }),
     Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Green"]) })
+      { color: new Color(colorNameToRgb["White"]) })
   );
 
   //show images
@@ -479,7 +475,8 @@ function configureScenes(gridzilla, facade) {
       period: 10000,
       perImagePeriod: 9000,
       imagesConfiguration: [
-        { name: "snowman.png" },
+        { name: "Snowman_Family_V4.png" },
+        { name: "Snowman_Family_Girl_V1.png" },
         { name: "snowflake.png" },
         { name: "Christmas Snoopy Tree 168x36 (2019 V1).png" },
         { name: "Train_2021.png", period: 29000 },
@@ -488,7 +485,7 @@ function configureScenes(gridzilla, facade) {
 
   const goChiefsScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      scrollText: ".        Go Chiefs!   Go Chiefs!   Go Chiefs!         .",
+      scrollText: "            Go Chiefs!   Go Chiefs!   Go Chiefs!              ",
       color: new Color(colorNameToRgb["Dark Red"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
@@ -499,7 +496,7 @@ function configureScenes(gridzilla, facade) {
 
   const goSportingScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      scrollText: ".         Go Sporting KC!   Go Sporting KC!   Go Sporting KC!        .",
+      scrollText: "            Go Sporting KC!   Go Sporting KC!   Go Sporting KC!             ",
       color: new Color(colorNameToRgb["Sporting Blue"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
@@ -528,7 +525,7 @@ function configureScenes(gridzilla, facade) {
       line1: "Welcome to",
       line2: "Deanna Rose",
       line3: "Children's Farmstead",
-      color: new Color(colorNameToRgb["White"]),
+      color: new Color(colorNameToRgb["Purple"]),
       period: 3000
     });
 
@@ -537,36 +534,36 @@ function configureScenes(gridzilla, facade) {
     {
       // imageNames: eosImageNames,
       headerText: "Night of the Living Farm",
-      scrollText: "             "
-        + " Friday and Saturday Nights "
-        + " October 22, 23, 29, & 30 "
-        + " 5PM to 9PM"
-        + " Purchase tickets online at drfarmstead.org",
-      color: new Color(colorNameToRgb["Orange"])
-    },
-    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Orange"]) }),
-    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Orange"]) })
-  );
+      scrollText: "                         "
+        + "      Friday and Saturday Nights "
+        + " October 22, 23, 29, & 30 - "
+        + " 5:30PM to 9:00PM -    "
+        + " Purchase tickets online at drfarmstead.org                         ",
+       color: new Color(colorNameToRgb["Orange"])
+      },
+      Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Orange"]) } ),
+      Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Orange"]) } )
+    );
 
   // create scenes
   const nolfMessageScene2 = new ScrollingTextScene(gridzilla, null, onPaused,
     {
       // imageNames: eosImageNames,
-      headerText: "Welcome!",
+      headerText: "Holiday Lights",
       scrollText: "             "
-        + "          The Holiday Lights show begins Thanksgiving evening.  "
-        + "The elves are working hard to get the show ready.  "
-        + "This is only a test!  Please come back to see the show.        "
-        + "         ",
-      color: new Color(colorNameToRgb["Orange"])
-    },
-    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Orange"]) }),
-    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Orange"]) })
-  );
+       + "           The Holiday Lights show begins Thanksgiving evening.  "
+       + "The elves are working hard to get the show ready.  "
+       + "Please come back to see the show. "
+       + "                                                 ",
+       color: new Color(colorNameToRgb["Red"])
+      },
+      Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Red"]) } ),
+      Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Red"]) } )
+    );
 
   //show NOLF images
   const nolfImageScene = new ImageScene(gridzilla, onPaused,
@@ -621,7 +618,7 @@ function configureScenes(gridzilla, facade) {
       welcomeBanner,
       preSeasonMessageScene,
       preSeasonImageScene,
-      // thanksFrontLineYouScene,
+      //thanksFrontLineYouScene,
       goChiefsScene,
       goSportingScene,
       logosScene,

@@ -20,7 +20,7 @@ class ScrollingTextScene {
 
   configure(configuration, gridzillaConfiguration, facadeConfiguration) {
     const defaults = {
-      period: 60000, // time scene should run
+      period: 5000, // time scene should run
 
       imageNames: [],
       headerText: null,
@@ -32,7 +32,7 @@ class ScrollingTextScene {
       color: new Color(255, 255, 255),
       backgroundColor: new Color(0, 0, 0),
 
-      speed: 30, // speed is ms between moves
+      speed: 50, // speed is ms between moves
 
       typeface: "*default*", fontSize: 12,
 
@@ -85,7 +85,7 @@ class ScrollingTextScene {
     const gridzillaTimeRequired = this.displayTextOnGridzilla();
     const timeRequired = Math.max(facadeTimeRequired, gridzillaTimeRequired);
 
-    const timeout = Math.min(timeRequired, this.configuration.period);
+    const timeout = Math.max(timeRequired, this.configuration.period);
     this.runningTimer = setTimeout(this.onComplete.bind(this), timeout);
   }
 
