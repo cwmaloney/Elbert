@@ -400,8 +400,8 @@ function configureScenes(gridzilla, facade) {
   // show logos
   const logosScene = new ImageScene(gridzilla, onPaused,
     {
-      period: 10500,
-      perImagePeriod: 5000,
+      period: 12000,
+      perImagePeriod: 6000,
       imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
         { name: "Enerfab Logo 36x168.gif" },
