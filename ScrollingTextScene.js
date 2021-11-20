@@ -32,7 +32,7 @@ class ScrollingTextScene {
       color: new Color(255, 255, 255),
       backgroundColor: new Color(0, 0, 0),
 
-      speed: 50, // speed is ms between moves
+      speed: 80, // speed is ms between moves
 
       typeface: "*default*", fontSize: 12,
 
