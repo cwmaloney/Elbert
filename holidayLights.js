@@ -290,7 +290,7 @@ const facadeDefaults = {
 // ];
 
 const teamMembers =
-  ".                             Mark Callegari (The Creator of Holiday Lights),"
+  "                             Mark Callegari (The Creator of Holiday Lights),"
   + " Chris Callegari,"
   + " Blake Stewart,"
   + " Chris Maloney,"
@@ -299,19 +299,19 @@ const teamMembers =
   + " Mike McCamon,"
   + " Steve Bullard,"
   + " Matt, Jerry, Kathi, & Laurie."
-  + "                           .";
+  + "                           ";
 
-const companies =
-  "-                             "
-  + " Foley Rental,"
-  + " Equipment Share,"
-  + " Pretech Precast Concrete,"
-  + " Enerfab Midwest,"
-  + " T.J. Kilian and KJO Media,"
-  + " & Jolt Lighting"
-  // + " Lowes on Stateline,"
-  // + " & Gieske Custom Metal Fabricators,"
-  + "                           -";
+// const companies =
+//   "-                             "
+//   + " Foley Rental,"
+//   + " Equipment Share,"
+//   + " Pretech Precast Concrete,"
+//   + " Enerfab Midwest,"
+//   + " T.J. Kilian and KJO Media,"
+//   + " & Jolt Lighting"
+//   // + " Lowes on Stateline,"
+//   // + " & Gieske Custom Metal Fabricators,"
+//   + "                           -";
 
 //////////////////////////////////////////////////////////////////////////////
 // scene configuration
@@ -346,13 +346,13 @@ function configureScenes(gridzilla, facade) {
       color: new Color(colorNameToRgb["Dark Red"])
     });
 
-  const instructions3Banner = new BannerScene(gridzilla, onPaused,
-    {
-      line1: "The message and cheer features ",
-      line2: "are currently disabled.  We",
-      line3: "hope to bring those back soon.",
-      color: new Color(colorNameToRgb["Dark Red"])
-    });
+  // const instructions3Banner = new BannerScene(gridzilla, onPaused,
+  //   {
+  //     line1: "The message and cheer features ",
+  //     line2: "are currently disabled.  We",
+  //     line3: "hope to bring those back soon.",
+  //     color: new Color(colorNameToRgb["Dark Red"])
+  //   });
 
   const hashtagBanner = new BannerScene(gridzilla, onPaused,
     {
@@ -380,11 +380,10 @@ function configureScenes(gridzilla, facade) {
   //show holiday images
   const holidayImageScene = new ImageScene(gridzilla, onPaused,
     {
-      period: 10000,
-      perImagePeriod: 9000,
+      period: 27100,
+      perImagePeriod: 3000,
       imagesConfiguration: [
         { name: "Christmas Snoopy Tree 168x36 (2021 V2).png" },
-        { name: "Train_2021_V2.png", period: 29000 },
         { name: "Sleigh 168x36 (2019 V3).png" },
         { name: "Snow Landscape 168x36 (2019 V3 Blue Background).png" },
         { name: "Snow Landscape Red 168x36 (2019 V1).png" },
@@ -397,17 +396,43 @@ function configureScenes(gridzilla, facade) {
       ]
     });
 
+  //show holiday images
+  const trainImageScene = new ImageScene(gridzilla, onPaused,
+    {
+      period: 29000,
+      imagesConfiguration: [
+        { name: "Train_2021_V2.png", period: 29000 },
+      ]
+    });
+  
+  const preLogosScene = new BannerScene(gridzilla, onPaused,
+    {
+      line1: "We cannot say thanks enough",
+      line2: "to the compaines that make",
+      line3: "Holidays Lights possible...",
+      color: new Color(colorNameToRgb["Dark Red"])
+    });
+  
   // show logos
   const logosScene = new ImageScene(gridzilla, onPaused,
     {
-      period: 12000,
-      perImagePeriod: 6000,
+      period: 36100,
+      perImagePeriod: 3000,
       imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
         { name: "Enerfab Logo 36x168.gif" },
         { name: "Equipment Share Logo V1 (168x36).png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
         { name: "Pretech Logo 36x168.gif" },
+        { name: "KJO_Log (Ditherd).png" },
+        
+        { name: "Foley Logo 36x168.gif" },
+        { name: "Enerfab Logo 36x168.gif" },
+        { name: "Equipment Share Logo V1 (168x36).png" },
+        { name: "Jolt Lighting Logo 36x106.gif" },
+        { name: "Pretech Logo 36x168.gif" },
+        { name: "KJO_Log (Ditherd).png" }
+        
         // { name: "Lowes_78x36_V2.png"},
       ]
     });
@@ -426,9 +451,9 @@ function configureScenes(gridzilla, facade) {
   const thankYouScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
       //period: 4 * 60 * 1000,
-      headerText: "Thanks!",
+      headerText: "Thank you voluneteers!",
       scrollText: teamMembers,
-      minimumInterval: 9 * 60 * 1000,
+      // minimumInterval: 9 * 60 * 1000,
       color: new Color(colorNameToRgb["Dark Red"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
@@ -437,19 +462,19 @@ function configureScenes(gridzilla, facade) {
       { color: new Color(colorNameToRgb["Dark Red"]) })
   );
 
-  const thankYouCompaniesScene = new ScrollingTextScene(gridzilla, null, onPaused,
-    {
-      //period: 4 * 60 * 1000,
-      headerText: "Thanks!",
-      scrollText: companies,
-      minimumInterval: 9 * 60 * 1000,
-      color: new Color(colorNameToRgb["Dark Red"])
-    },
-    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Dark Red"]) }),
-    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Dark Red"]) })
-  );
+  // const thankYouCompaniesScene = new ScrollingTextScene(gridzilla, null, onPaused,
+  //   {
+  //     //period: 4 * 60 * 1000,
+  //     headerText: "Thanks!",
+  //     scrollText: companies,
+  //     minimumInterval: 9 * 60 * 1000,
+  //     color: new Color(colorNameToRgb["Dark Red"])
+  //   },
+  //   Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+  //     { color: new Color(colorNameToRgb["Dark Red"]) }),
+  //   Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+  //     { color: new Color(colorNameToRgb["Dark Red"]) })
+  // );
 
   const preSeasonMessageScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
@@ -597,16 +622,16 @@ function configureScenes(gridzilla, facade) {
       welcomeBanner,
       instructionsBanner,
       instructions2Banner,
-      instructions3Banner,
+      //instructions3Banner,
       hashtagBanner,
-      //cheersScene,
       holidayImageScene,
+      trainImageScene,
+      thankYouScene,
+      preLogosScene,
+      logosScene,
+      // cheersScene,
       // preSnakesBanner,
       // snakeScene,
-      thankYouScene,
-      holidayImageScene,
-      thankYouCompaniesScene,
-      logosScene,
       //thanksFrontLineYouScene
     ];
 
@@ -617,11 +642,15 @@ function configureScenes(gridzilla, facade) {
     scenes = [
       welcomeBanner,
       preSeasonMessageScene,
-      preSeasonImageScene,
       //thanksFrontLineYouScene,
+      //preSeasonImageScene,
+      holidayImageScene,
+      trainImageScene,
+      thankYouScene,
+      preLogosScene,
+      logosScene,
       goChiefsScene,
       goSportingScene,
-      logosScene,
     ];
 
   }
