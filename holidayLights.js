@@ -383,7 +383,7 @@ function configureScenes(gridzilla, facade) {
       period: 10000,
       perImagePeriod: 9000,
       imagesConfiguration: [
-        { name: "Christmas Snoopy Tree 168x36 (2019 V1).png" },
+        { name: "Christmas Snoopy Tree 168x36 (2021 V2).png" },
         { name: "Train_2021_V2.png", period: 29000 },
         { name: "Sleigh 168x36 (2019 V3).png" },
         { name: "Snow Landscape 168x36 (2019 V3 Blue Background).png" },
@@ -478,7 +478,7 @@ function configureScenes(gridzilla, facade) {
         { name: "Snowman_Family_V4.png" },
         { name: "Snowman_Family_Girl_V1.png" },
         { name: "snowflake.png" },
-        { name: "Christmas Snoopy Tree 168x36 (2019 V1).png" },
+        { name: "Christmas Snoopy Tree 168x36 (2021 V2).png" },
         { name: "Train_2021_V2.png", period: 29000 },
       ]
     });
