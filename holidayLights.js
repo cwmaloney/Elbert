@@ -325,7 +325,7 @@ function configureScenes(gridzilla, facade) {
       line1: "Welcome to",
       line2: "Holiday Lights",
       line3: "on Farmstead Lane   ",
-      color: new Color(colorNameToRgb["White"]),
+      color: new Color(colorNameToRgb["Dark Red"]),
       period: 2000
     });
 
@@ -486,12 +486,12 @@ function configureScenes(gridzilla, facade) {
         + "The elves are working hard to get the show ready.  "
         + "Please come back to see the show."
         + "                     ",
-      color: new Color(colorNameToRgb["Blue"])
+      color: new Color(colorNameToRgb["Green"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["White"]) }),
+      { color: new Color(colorNameToRgb["Green"]) }),
     Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["White"]) })
+      { color: new Color(colorNameToRgb["Green"]) })
   );
 
   //show images
@@ -522,12 +522,12 @@ function configureScenes(gridzilla, facade) {
   const goSportingScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
       scrollText: "            Go Sporting KC!   Go Sporting KC!   Go Sporting KC!             ",
-      color: new Color(colorNameToRgb["Sporting Blue"])
+      color: new Color(colorNameToRgb["Midnight Blue"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Sporting Blue"]) }),
+      { color: new Color(colorNameToRgb["Midnight Blue"]) }),
     Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Sporting Blue"]) })
+      { color: new Color(colorNameToRgb["Midnight Blue"]) })
   );
 
   // const thankFrontLineWorkersScene = new ScrollingTextScene(gridzilla, null, onPaused,
