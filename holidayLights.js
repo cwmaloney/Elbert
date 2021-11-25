@@ -257,12 +257,12 @@ const gridzillaDefaults = {
     headerTextTop: 3,
     scrollTextTop: 18,
     typeface: "*default*", fontSize: 12,
-    speed: 30
+    speed: 45
   },
   scrollSceneDefaultsNoHeader: {
     scrollTextTop: 10,
     typeface: "*default*", fontSize: 12,
-    speed: 30
+    speed: 45
   }
 };
 
@@ -290,12 +290,12 @@ const facadeDefaults = {
 // ];
 
 const teamMembers =
-  "                             Mark Callegari (The Creator of Holiday Lights),"
+  "                             Mark Callegari (The Creator of Holiday Lights), "
   + " Chris Callegari,"
   + " Blake Stewart,"
   + " Chris Maloney,"
-  + " Ken & Min Vrana,"
   + " Bill 'K5EE' Jones,"
+  + " Ken & Min Vrana,"
   + " Mike McCamon,"
   + " Steve Bullard,"
   + " Matt, Jerry, Kathi, & Laurie."
@@ -380,19 +380,22 @@ function configureScenes(gridzilla, facade) {
   //show holiday images
   const holidayImageScene = new ImageScene(gridzilla, onPaused,
     {
-      period: 27100,
+      period: 34000,
       perImagePeriod: 3000,
       imagesConfiguration: [
         { name: "Christmas Snoopy Tree 168x36 (2021 V2).png" },
+        { name: "Snowman_Family_V4.png" },
         { name: "Sleigh 168x36 (2019 V3).png" },
         { name: "Snow Landscape 168x36 (2019 V3 Blue Background).png" },
-        { name: "Snow Landscape Red 168x36 (2019 V1).png" },
+        // { name: "Snow Landscape Red 168x36 (2019 V1).png" },
         { name: "Winter Wonderland 168x36 (2019 V3 Blue Background).png" },
         { name: "Like Christmas 168x36 (2019 V1).png" },
         { name: "Sleigh Ride 268x36 (2019 V1).png" },
+        { name: "Snowman_Family_Girl_V1.png" },
 
         { name: "brown paper packages.png" },
-        { name: "jinglebells.png" }
+        { name: "jinglebells.png" },
+        { name: "snowflake.png" }
       ]
     });
 
@@ -407,16 +410,16 @@ function configureScenes(gridzilla, facade) {
   
   const preLogosScene = new BannerScene(gridzilla, onPaused,
     {
-      line1: "We cannot say thanks enough",
-      line2: "to the compaines that make",
-      line3: "Holidays Lights possible...",
+      line1: "We can't say thanks enough to",
+      line2: "the compaines that help make",
+      line3: "Holidays Lights possible . . .",
       color: new Color(colorNameToRgb["Dark Red"])
     });
   
   // show logos
   const logosScene = new ImageScene(gridzilla, onPaused,
     {
-      period: 36100,
+      period: 36000,
       perImagePeriod: 3000,
       imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
@@ -424,14 +427,14 @@ function configureScenes(gridzilla, facade) {
         { name: "Equipment Share Logo V1 (168x36).png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
         { name: "Pretech Logo 36x168.gif" },
-        { name: "KJO_Log (Ditherd).png" },
+        { name: "KJO Logo (Dithered).png" },
         
         { name: "Foley Logo 36x168.gif" },
         { name: "Enerfab Logo 36x168.gif" },
         { name: "Equipment Share Logo V1 (168x36).png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
         { name: "Pretech Logo 36x168.gif" },
-        { name: "KJO_Log (Ditherd).png" }
+        { name: "KJO Logo (Dithered).png" }
         
         // { name: "Lowes_78x36_V2.png"},
       ]
@@ -450,8 +453,8 @@ function configureScenes(gridzilla, facade) {
 
   const thankYouScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      //period: 4 * 60 * 1000,
-      headerText: "Thank you voluneteers!",
+      period: 23 * 1000,
+      headerText: "Thank you volunteers!",
       scrollText: teamMembers,
       // minimumInterval: 9 * 60 * 1000,
       color: new Color(colorNameToRgb["Dark Red"])
@@ -494,19 +497,19 @@ function configureScenes(gridzilla, facade) {
       { color: new Color(colorNameToRgb["Green"]) })
   );
 
-  //show images
-  const preSeasonImageScene = new ImageScene(gridzilla, onPaused,
-    {
-      period: 10000,
-      perImagePeriod: 9000,
-      imagesConfiguration: [
-        { name: "Snowman_Family_V4.png" },
-        { name: "Snowman_Family_Girl_V1.png" },
-        { name: "snowflake.png" },
-        { name: "Christmas Snoopy Tree 168x36 (2021 V2).png" },
-        { name: "Train_2021_V2.png", period: 29000 },
-      ]
-    });
+  // //show images
+  // const preSeasonImageScene = new ImageScene(gridzilla, onPaused,
+  //   {
+  //     period: 10000,
+  //     perImagePeriod: 9000,
+  //     imagesConfiguration: [
+  //       { name: "Snowman_Family_V4.png" },
+  //       { name: "Snowman_Family_Girl_V1.png" },
+  //       { name: "snowflake.png" },
+  //       { name: "Christmas Snoopy Tree 168x36 (2021 V2).png" },
+  //       { name: "Train_2021_V2.png", period: 29000 },
+  //     ]
+  //   });
 
   const goChiefsScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
