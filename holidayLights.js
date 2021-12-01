@@ -294,7 +294,7 @@ const teamMembers =
   + " Chris Callegari,"
   + " Blake Stewart,"
   + " Chris Maloney,"
-  + " Bill 'K5EE' Jones,"
+  + " Bill (K5EE) Jones,"
   + " Ken & Min Vrana,"
   + " Mike McCamon,"
   + " Steve Bullard,"
@@ -326,15 +326,16 @@ function configureScenes(gridzilla, facade) {
       line2: "Holiday Lights",
       line3: "on Farmstead Lane   ",
       color: new Color(colorNameToRgb["Dark Red"]),
-      period: 2000
+      period: 3000
     });
 
   const instructionsBanner = new BannerScene(gridzilla, onPaused,
     {
-      line1: "Tune to 90.5 FM",
-      line2: "to hear the music.",
+      //The spaces get the messages centered, apparently our length estimate and centering code isn't perfect
+      line1: "Tune to 90.5 FM  ",
+      line2: " to hear the music.",
       line3: "Please turn off your headlights.",
-      color: new Color(colorNameToRgb["Dark Red"])
+      color: new Color(colorNameToRgb["Green"])
     });
 
   const instructions2Banner = new BannerScene(gridzilla, onPaused,
@@ -343,9 +344,15 @@ function configureScenes(gridzilla, facade) {
       line2: "to send suggestions to the elves",
       //line2: "to display messages",
       line3: "and see the song list.",
-      color: new Color(colorNameToRgb["Dark Red"])
+      color: new Color(colorNameToRgb["Green"])
     });
 
+    const headlightsBanner = new BannerScene(gridzilla, onPaused,
+      {
+        line1: "Please turn your",
+        line2: "headlights off",
+        color: new Color(colorNameToRgb["Orange"])
+      });
   // const instructions3Banner = new BannerScene(gridzilla, onPaused,
   //   {
   //     line1: "The message and cheer features ",
@@ -354,13 +361,45 @@ function configureScenes(gridzilla, facade) {
   //     color: new Color(colorNameToRgb["Dark Red"])
   //   });
 
-  const hashtagBanner = new BannerScene(gridzilla, onPaused,
+  const instructions4Banner = new BannerScene(gridzilla, onPaused,
     {
-      line1: "#farmsteadlights",
-      line2: "Post photos & selfies",
-      color: new Color(colorNameToRgb["Dark Red"])
+      line1: "Please do not block",
+      line2: "the lanes on the sides",
+      line3: "of the lot.",
+      color: new Color(colorNameToRgb["Pink"])
     });
 
+  const hashtagBanner = new BannerScene(gridzilla, onPaused,
+    {
+      period: 6000,
+      line1: "#farmsteadlights",
+      line2: "Post photos & selfies",
+      line3: " ",
+      color: new Color(colorNameToRgb["Green"])
+    });
+
+  const instructionsFacebook = new ScrollingTextScene(gridzilla, null, onPaused,
+    {
+      period: 18000,
+      headerText: "Visit us on Facebook",
+      scrollText: "                              HolidayLightsAtDeannaRoseFarmstead",
+      color: new Color(colorNameToRgb["Green"])
+      },
+      Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Green"]) }),
+      Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Green"]) })
+    );
+  
+  const instructionsInstagram = new BannerScene(gridzilla, onPaused,
+    {
+      period: 9000,
+      line1: "Visit us on Instagram",
+      line2: "HolidayLightsAtDeannaRose",
+      line3: " ",
+      color: new Color(colorNameToRgb["Dark Red"])
+    });
+            
   // const holidaysMessagesScene = new MessageScene(gridzilla, null, onPaused, nameManager,
   // {
   //   sampleMessages: holidaySampleMessages
@@ -413,7 +452,7 @@ function configureScenes(gridzilla, facade) {
       line1: "We can't say thanks enough to",
       line2: "the compaines that help make",
       line3: "Holidays Lights possible . . .",
-      color: new Color(colorNameToRgb["Dark Red"])
+      color: new Color(colorNameToRgb["Green"])
     });
   
   // show logos
@@ -457,12 +496,12 @@ function configureScenes(gridzilla, facade) {
       headerText: "Thank you volunteers!",
       scrollText: teamMembers,
       // minimumInterval: 9 * 60 * 1000,
-      color: new Color(colorNameToRgb["Dark Red"])
+      color: new Color(colorNameToRgb["Dark Blue"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Dark Red"]) }),
+      { color: new Color(colorNameToRgb["Dark Blue"]) }),
     Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Dark Red"]) })
+      { color: new Color(colorNameToRgb["Dark Blue"]) })
   );
 
   // const thankYouCompaniesScene = new ScrollingTextScene(gridzilla, null, onPaused,
@@ -513,6 +552,8 @@ function configureScenes(gridzilla, facade) {
 
   const goChiefsScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
+      period: 5500,
+      headerText: "Go Kansas City Chiefs!",
       scrollText: "            Go Chiefs!   Go Chiefs!   Go Chiefs!              ",
       color: new Color(colorNameToRgb["Dark Red"])
     },
@@ -522,16 +563,18 @@ function configureScenes(gridzilla, facade) {
       { color: new Color(colorNameToRgb["Dark Red"]) })
   );
 
-  const goSportingScene = new ScrollingTextScene(gridzilla, null, onPaused,
-    {
-      scrollText: "            Go Sporting KC!   Go Sporting KC!   Go Sporting KC!             ",
-      color: new Color(colorNameToRgb["Midnight Blue"])
-    },
-    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Midnight Blue"]) }),
-    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Midnight Blue"]) })
-  );
+  // const goSportingScene = new ScrollingTextScene(gridzilla, null, onPaused,
+  //   {
+  //     period: 5000,
+  //     headerText: "GO SPORTING KC!",
+  //     scrollText: "            Go Sporting KC!   Go Sporting KC!   Go Sporting KC!             ",
+  //     color: new Color(colorNameToRgb["Midnight Blue"])
+  //   },
+  //   Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+  //     { color: new Color(colorNameToRgb["Midnight Blue"]) }),
+  //   Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+  //     { color: new Color(colorNameToRgb["Midnight Blue"]) })
+  // );
 
   // const thankFrontLineWorkersScene = new ScrollingTextScene(gridzilla, null, onPaused,
   //   {
@@ -603,7 +646,7 @@ function configureScenes(gridzilla, facade) {
         { name: "pumpkin.png" },
         { name: "woodstock 38x38.png" },
         { name: "snowman.png" },
-        { name: "snowflake.png" },
+        { name: "snowflake.png" }
       ]
     });
 
@@ -614,8 +657,8 @@ function configureScenes(gridzilla, facade) {
       nolfMessageScene2,
       nolfImageScene,
       goChiefsScene,
-      nolfImageScene,
-      goSportingScene
+      nolfImageScene
+//      goSportingScene
     ];
   }
 
@@ -626,12 +669,18 @@ function configureScenes(gridzilla, facade) {
       instructionsBanner,
       instructions2Banner,
       //instructions3Banner,
+      instructions4Banner,
+      instructionsFacebook,
+      instructionsInstagram,
       hashtagBanner,
+      headlightsBanner,
       holidayImageScene,
       trainImageScene,
       thankYouScene,
       preLogosScene,
       logosScene,
+      goChiefsScene
+      // goSportingScene
       // cheersScene,
       // preSnakesBanner,
       // snakeScene,
@@ -652,8 +701,8 @@ function configureScenes(gridzilla, facade) {
       thankYouScene,
       preLogosScene,
       logosScene,
-      goChiefsScene,
-      goSportingScene,
+      goChiefsScene
+      // goSportingScene,
     ];
 
   }
