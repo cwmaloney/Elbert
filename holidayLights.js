@@ -389,7 +389,7 @@ function configureScenes(gridzilla, facade) {
         { name: "Snow Landscape 168x36 (2019 V3 Blue Background).png" },
         // { name: "Snow Landscape Red 168x36 (2019 V1).png" },
         { name: "Winter Wonderland 168x36 (2019 V3 Blue Background).png" },
-        { name: "Like Christmas 168x36 (2019 V1).png" },
+        { name: "Like Christmas 168x36 (2021 V2).png" },
         { name: "Sleigh Ride 268x36 (2019 V1).png" },
         { name: "Snowman_Family_Girl_V1.png" },
 
