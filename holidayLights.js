@@ -290,7 +290,7 @@ const facadeDefaults = {
 // ];
 
 const teamMembers =
-  "                             Mark Callegari (The Creator of Holiday Lights), "
+  "                             Mark Callegari,"
   + " Chris Callegari,"
   + " Blake Stewart,"
   + " Chris Maloney,"
@@ -344,7 +344,7 @@ function configureScenes(gridzilla, facade) {
       line2: "to send suggestions to the elves",
       //line2: "to display messages",
       line3: "and see the song list.",
-      color: new Color(colorNameToRgb["Green"])
+      color: new Color(colorNameToRgb["Red"])
     });
 
     const headlightsBanner = new BannerScene(gridzilla, onPaused,
@@ -369,12 +369,19 @@ function configureScenes(gridzilla, facade) {
       color: new Color(colorNameToRgb["Pink"])
     });
 
+    const thanksMarkBanner = new BannerScene(gridzilla, onPaused,
+      {
+        line1: "Thanks to Mark Callegari,",
+        line2: "The Creator of",
+        line3: "Holiday Lights at Deanna Rose",
+        color: new Color(colorNameToRgb["Pink"])
+      });
+
   const hashtagBanner = new BannerScene(gridzilla, onPaused,
     {
       period: 6000,
       line1: "#farmsteadlights",
       line2: "Post photos & selfies",
-      line3: " ",
       color: new Color(colorNameToRgb["Green"])
     });
 
@@ -492,7 +499,7 @@ function configureScenes(gridzilla, facade) {
 
   const thankYouScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      period: 23 * 1000,
+      period: 34 * 1000,
       headerText: "Thank you volunteers!",
       scrollText: teamMembers,
       // minimumInterval: 9 * 60 * 1000,
@@ -678,15 +685,16 @@ function configureScenes(gridzilla, facade) {
   function configureHolidayScenes(gridzilla) {
 
     scenes = [
-      welcomeBanner,
-      instructionsBanner,
-      instructions2Banner,
+      welcomeBanner, //red
+      instructionsBanner, //green
+      instructions2Banner, //red
       //instructions3Banner,
-      instructions4Banner,
-      instructionsFacebook,
-      instructionsInstagram,
-      hashtagBanner,
-      headlightsBanner,
+      instructions4Banner, //pink
+      instructionsFacebook, //green
+      instructionsInstagram, //red
+      hashtagBanner, //green
+      thanksMarkBanner, //pink
+      headlightsBanner, //orange
       holidayImageScene,
       trainImageScene,
       thankYouScene,
