@@ -496,12 +496,12 @@ function configureScenes(gridzilla, facade) {
       headerText: "Thank you volunteers!",
       scrollText: teamMembers,
       // minimumInterval: 9 * 60 * 1000,
-      color: new Color(colorNameToRgb["Dark Blue"])
+      color: new Color(colorNameToRgb["Pink"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Dark Blue"]) }),
+      { color: new Color(colorNameToRgb["Pink"]) }),
     Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Dark Blue"]) })
+      { color: new Color(colorNameToRgb["Pink"]) })
   );
 
   // const thankYouCompaniesScene = new ScrollingTextScene(gridzilla, null, onPaused,
@@ -549,6 +549,19 @@ function configureScenes(gridzilla, facade) {
   //       { name: "Train_2021_V2.png", period: 29000 },
   //     ]
   //   });
+
+  const donationsScene = new ScrollingTextScene(gridzilla, null, onPaused,
+    {
+      period: 5500,
+      headerText: "Happy Holidays!",
+      scrollText: "             We do not request or accept donations during the show.              ",
+      color: new Color(colorNameToRgb["Dark Red"])
+    },
+    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Dark Red"]) }),
+    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Dark Red"]) })
+  );
 
   const goChiefsScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
@@ -679,6 +692,7 @@ function configureScenes(gridzilla, facade) {
       thankYouScene,
       preLogosScene,
       logosScene,
+      donationsScene,
       goChiefsScene
       // goSportingScene
       // cheersScene,
