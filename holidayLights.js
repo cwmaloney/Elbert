@@ -108,7 +108,7 @@ app.use(BodyParser.json());
 app.use(Cors());
 //app.options('*', Cors());
 
-// the name "io" follows the Socket.io "nameing convention"
+// the name "io" follows the Socket.io "naming convention"
 const io = SocketIo(server, {
   cors: {
     origin: "https://farmsteadlights.com",
@@ -215,10 +215,10 @@ app.get("/cheers", function (request, response) {
 // });
 
 // app.get("/triviaQuestions", function(request, response) {
-//   return triviaScene.getQuesions(request, response);
+//   return triviaScene.getQuestions(request, response);
 // });
 
-// app.post("/trivaResults", function(request, response) {
+// app.post("/triviaResults", function(request, response) {
 //   return triviaScene.addName(request, response);
 // });
 
@@ -286,7 +286,7 @@ const facadeDefaults = {
 //   { sample: true, recipient: "Lucy", message: "Happy Holidays", sender: "Charlie", color: "Purple" },
 //   { sample: true, recipient: "Santa", message: "Merry Christmas", sender: "Buddy", color: "Red" },
 //   { sample: true, recipient: "Everyone", message: "Live Long and Prosper", sender: "Spock", color: "Lime" },
-//   { sample: true, recipient: "Mila and Emmy", message: "Merry Christmas", sender: "Rachel & Chris", color: "Pink" },
+//   { sample: true, recipient: "Emmy", message: "Merry Christmas", sender: "Rachel & Chris", color: "Pink" },
 // ];
 
 const teamMembers =
@@ -294,11 +294,11 @@ const teamMembers =
   + " Chris Callegari,"
   + " Blake Stewart,"
   + " Chris Maloney,"
-  + " Bill (K5EE) Jones,"
+  + " Bill Jones,"
   + " Ken & Min Vrana,"
   + " Mike McCamon,"
-  + " Steve Bullard,"
-  + " Matt, Jerry, Kathi, & Laurie."
+  + " & Steve Bullard."
+  //+ " Matt, Kathi, & Laurie."
   + "                           ";
 
 // const companies =
@@ -309,7 +309,7 @@ const teamMembers =
 //   + " Enerfab Midwest,"
 //   + " T.J. Kilian and KJO Media,"
 //   + " & Jolt Lighting"
-//   // + " Lowes on Stateline,"
+//   // + " Lowes on State Line,"
 //   // + " & Gieske Custom Metal Fabricators,"
 //   + "                           -";
 
@@ -325,7 +325,7 @@ function configureScenes(gridzilla, facade) {
       line1: "Welcome to",
       line2: "Holiday Lights",
       line3: "on Farmstead Lane   ",
-      color: new Color(colorNameToRgb["Dark Red"]),
+      color: new Color(colorNameToRgb["Purple"]),
       period: 3000
     });
 
@@ -379,7 +379,7 @@ function configureScenes(gridzilla, facade) {
 
   const hashtagBanner = new BannerScene(gridzilla, onPaused,
     {
-      period: 6000,
+      period: 4000,
       line1: "#farmsteadlights",
       line2: "Post photos & selfies",
       color: new Color(colorNameToRgb["Green"])
@@ -397,7 +397,20 @@ function configureScenes(gridzilla, facade) {
       Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
         { color: new Color(colorNameToRgb["Green"]) })
     );
-  
+
+  const kettleCornAd = new ScrollingTextScene(gridzilla, null, onPaused,
+    {
+      period: 18000,
+      headerText: "Jack's Kettle Corn",
+      scrollText: ".            Visit Jack's Kettle Corn in the northwest corner of the parking lot for delicious Kettle Corn, Hot Chocolate, and Cotton Candy.         .",
+      color: new Color(colorNameToRgb["Red"])
+      },
+      Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Red"]) }),
+      Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Red"]) })
+    );
+    
   const instructionsInstagram = new BannerScene(gridzilla, onPaused,
     {
       period: 9000,
@@ -433,7 +446,6 @@ function configureScenes(gridzilla, facade) {
         { name: "Snowman_Family_V4.png" },
         { name: "Sleigh 168x36 (2019 V3).png" },
         { name: "Snow Landscape 168x36 (2019 V3 Blue Background).png" },
-        // { name: "Snow Landscape Red 168x36 (2019 V1).png" },
         { name: "Winter Wonderland 168x36 (2019 V3 Blue Background).png" },
         { name: "Like Christmas 168x36 (2021 V2).png" },
         { name: "Sleigh Ride 268x36 (2019 V1).png" },
@@ -450,14 +462,14 @@ function configureScenes(gridzilla, facade) {
     {
       period: 29000,
       imagesConfiguration: [
-        { name: "Train_2021_V2.png", period: 29000 },
+        { name: "Train_2022_V2.png", period: 29000 },
       ]
     });
   
   const preLogosScene = new BannerScene(gridzilla, onPaused,
     {
       line1: "We can't say thanks enough to",
-      line2: "the compaines that help make",
+      line2: "the companies that help make",
       line3: "Holidays Lights possible . . .",
       color: new Color(colorNameToRgb["Green"])
     });
@@ -470,14 +482,14 @@ function configureScenes(gridzilla, facade) {
       imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
         { name: "Enerfab Logo 36x168.gif" },
-        { name: "Equipment Share Logo V1 (168x36).png" },
+        // { name: "Equipment Share Logo V1 (168x36).png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
         { name: "Pretech Logo 36x168.gif" },
         { name: "KJO Logo (Dithered).png" },
         
         { name: "Foley Logo 36x168.gif" },
         { name: "Enerfab Logo 36x168.gif" },
-        { name: "Equipment Share Logo V1 (168x36).png" },
+        // { name: "Equipment Share Logo V1 (168x36).png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
         { name: "Pretech Logo 36x168.gif" },
         { name: "KJO Logo (Dithered).png" }
@@ -527,20 +539,39 @@ function configureScenes(gridzilla, facade) {
 
   const preSeasonMessageScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      period: 20000,
-      headerText: "Happy Holidays!",
+      period: 25000,
+      headerText: "Holiday Lights is coming!",
       scrollText: "             "
         + "                     "
-        + "The Holiday Lights show begins Thanksgiving evening.  "
-        + "The elves are working hard to get the show ready.  "
+        + "The Holiday Lights on Farmstead Lane show begins Thanksgiving evening.  "
+        + "The elves are busy getting the show ready.  "
         + "Please come back to see the show."
-        + "                     ",
-      color: new Color(colorNameToRgb["Green"])
+        + " - - -    - - -    - - -",
+      color: new Color(colorNameToRgb["Dark Red"])
     },
     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-      { color: new Color(colorNameToRgb["Green"]) }),
+      { color: new Color(colorNameToRgb["Dark Red"]) }),
     Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
       { color: new Color(colorNameToRgb["Green"]) })
+  );
+
+  const testingMessageScene = new ScrollingTextScene(gridzilla, null, onPaused,
+    {
+      period: 25000,
+      headerText: "- - - - Testing - - - -",
+      scrollText: "             "
+        + "                     "
+        + "... testing... testing ... testing ...  "
+        + "... ... Is this thing on?  ... ..."
+        + " This is only a test. If this were the real show, you would be instructed to tune your radio to 90.5 and turn off your lights. This as been a test. "
+        + "Please come back to see the show."
+        + " - - -    - - -    - - -",
+      color: new Color(colorNameToRgb["Purple"])
+    },
+    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Purple"]) }),
+    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Purple"]) })
   );
 
   // //show images
@@ -596,11 +627,11 @@ function configureScenes(gridzilla, facade) {
   //     { color: new Color(colorNameToRgb["Midnight Blue"]) })
   // );
 
-  // const thankFrontLineWorkersScene = new ScrollingTextScene(gridzilla, null, onPaused,
+  // const thanksFrontLineWorkersScene = new ScrollingTextScene(gridzilla, null, onPaused,
   //   {
   //     period: 4*60*1000,
   //     headerText: "Thanks!",
-  //     scrollText: ".        Thank you healthcare workers, first reponsders, and veterans!        .",
+  //     scrollText: ".        Thank you healthcare workers, first responders, and veterans!        .",
   //     minimumInterval: 9*60*1000,
   //     color: new Color(colorNameToRgb["Blue"])
   //   },
@@ -626,10 +657,10 @@ function configureScenes(gridzilla, facade) {
       // imageNames: eosImageNames,
       headerText: "Night of the Living Farm",
       scrollText: "                         "
-        + "      Friday and Saturday Nights "
-        + " October 22, 23, 29, & 30 - "
+        + " - - - Friday and Saturday Nights "
+        + " October 21, 22, 28, & 29 - "
         + " 5:30PM to 9:00PM -    "
-        + " Purchase tickets online at drfarmstead.org                         ",
+        + " Purchase tickets online at drfarmstead.org. - - - - - - - - -",
        color: new Color(colorNameToRgb["Orange"])
       },
       Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
@@ -665,8 +696,8 @@ function configureScenes(gridzilla, facade) {
         { name: "ghost.png" },
         { name: "pumpkin.png" },
         { name: "woodstock 38x38.png" },
-        { name: "snowman.png" },
-        { name: "snowflake.png" }
+        //{ name: "snowman.png" },
+        //{ name: "snowflake.png" }
       ]
     });
 
@@ -685,11 +716,14 @@ function configureScenes(gridzilla, facade) {
   function configureHolidayScenes(gridzilla) {
 
     scenes = [
+      // testingMessageScene,
       welcomeBanner, //red
+      //preSeasonMessageScene,
       instructionsBanner, //green
       instructions2Banner, //red
       //instructions3Banner,
       instructions4Banner, //pink
+      kettleCornAd,
       instructionsFacebook, //green
       instructionsInstagram, //red
       hashtagBanner, //green
@@ -714,13 +748,15 @@ function configureScenes(gridzilla, facade) {
   function configurePreSeasonScenes(gridzilla) {
 
     scenes = [
-      welcomeBanner,
+      testingMessageScene,
+      //nolfWelcomeBanner,
+      //welcomeBanner,
       preSeasonMessageScene,
       //thanksFrontLineYouScene,
       //preSeasonImageScene,
       holidayImageScene,
       trainImageScene,
-      thankYouScene,
+      //thankYouScene,
       preLogosScene,
       logosScene,
       goChiefsScene
@@ -747,7 +783,7 @@ function configureScenes(gridzilla, facade) {
     ];
 
     // create scenes
-    const vdayWelcomeScene = new ScrollingTextScene(gridzilla, facade, onPaused,
+    const valentineWelcomeScene = new ScrollingTextScene(gridzilla, facade, onPaused,
       {
         imageNames: vDayImageNames,
         scrollText: "             "
@@ -761,7 +797,7 @@ function configureScenes(gridzilla, facade) {
         { color: new Color(255, 200, 200) })
     );
 
-    const vdayMessagesScene = new MessageScene(gridzilla, facade, onPaused, nameManager,
+    const valentineMessagesScene = new MessageScene(gridzilla, facade, onPaused, nameManager,
       {
         imageNames: vDayImageNames,
         sampleMessages: vDaySampleMessages
@@ -771,8 +807,8 @@ function configureScenes(gridzilla, facade) {
     );
 
     scenes = [
-      vdayWelcomeScene,
-      vdayMessagesScene
+      valentineWelcomeScene,
+      valentineMessagesScene
     ];
 
   }
