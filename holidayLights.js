@@ -329,7 +329,7 @@ function configureScenes(gridzilla, facade) {
       period: 3000
     });
 
-  const instructionsBanner = new BannerScene(gridzilla, onPaused,
+  const instructionsTuneTo = new BannerScene(gridzilla, onPaused,
     {
       //The spaces get the messages centered, apparently our length estimate and centering code isn't perfect
       line1: "Tune to 90.5 FM  ",
@@ -338,7 +338,7 @@ function configureScenes(gridzilla, facade) {
       color: new Color(colorNameToRgb["Green"])
     });
 
-  const instructions2Banner = new BannerScene(gridzilla, onPaused,
+  const instructionsFarmsteadDotCom = new BannerScene(gridzilla, onPaused,
     {
       line1: "Visit farmsteadlights.com",
       line2: "to send suggestions to the elves",
@@ -353,7 +353,7 @@ function configureScenes(gridzilla, facade) {
         line2: "headlights off",
         color: new Color(colorNameToRgb["Orange"])
       });
-  // const instructions3Banner = new BannerScene(gridzilla, onPaused,
+  // const messagesDisabled = new BannerScene(gridzilla, onPaused,
   //   {
   //     line1: "The message and cheer features ",
   //     line2: "are currently disabled.  We",
@@ -361,7 +361,7 @@ function configureScenes(gridzilla, facade) {
   //     color: new Color(colorNameToRgb["Dark Red"])
   //   });
 
-  const instructions4Banner = new BannerScene(gridzilla, onPaused,
+  const instructionsLanes = new BannerScene(gridzilla, onPaused,
     {
       line1: "Please do not block",
       line2: "the lanes on the sides",
@@ -377,13 +377,13 @@ function configureScenes(gridzilla, facade) {
         color: new Color(colorNameToRgb["Pink"])
       });
 
-  const hashtagBanner = new BannerScene(gridzilla, onPaused,
-    {
-      period: 4000,
-      line1: "#farmsteadlights",
-      line2: "Post photos & selfies",
-      color: new Color(colorNameToRgb["Green"])
-    });
+  // const hashtagBanner = new BannerScene(gridzilla, onPaused,
+  //   {
+  //     period: 4000,
+  //     line1: "#farmsteadlights",
+  //     line2: "Post photos & selfies",
+  //     color: new Color(colorNameToRgb["Green"])
+  //   });
 
   const instructionsFacebook = new ScrollingTextScene(gridzilla, null, onPaused,
     {
@@ -403,12 +403,12 @@ function configureScenes(gridzilla, facade) {
       period: 18000,
       headerText: "Jack's Kettle Corn",
       scrollText: ".            Visit Jack's Kettle Corn in the northwest corner of the parking lot for delicious Kettle Corn, Hot Chocolate, and Cotton Candy.         .",
-      color: new Color(colorNameToRgb["Red"])
-      },
+      color: new Color(colorNameToRgb["Purple"])
+    },
       Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-        { color: new Color(colorNameToRgb["Red"]) }),
+        { color: new Color(colorNameToRgb["Purple"]) }),
       Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-        { color: new Color(colorNameToRgb["Red"]) })
+        { color: new Color(colorNameToRgb["Purple"]) })
     );
     
   const instructionsInstagram = new BannerScene(gridzilla, onPaused,
@@ -419,7 +419,33 @@ function configureScenes(gridzilla, facade) {
       line3: " ",
       color: new Color(colorNameToRgb["Dark Red"])
     });
-            
+
+    const opIsHiring1 = new ScrollingTextScene(gridzilla, null, onPaused,
+      {
+        period: 17000,
+        headerText: "Overland Park is hiring!",
+        scrollText: ". . . . . . . . . . . . . . Parks & Rec, IT, HR, Soccer, Forestry, Fire, Police, & more - visit recruit.opkansas.org . . . . . .",
+        color: new Color(colorNameToRgb["Red"])
+      },
+        Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+          { color: new Color(colorNameToRgb["Red"]) }),
+        Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+          { color: new Color(colorNameToRgb["Red"]) })
+      );
+
+      const opIsHiring2 = new ScrollingTextScene(gridzilla, null, onPaused,
+        {
+          period: 9000,
+          headerText: "Overland Park is hiring!",
+          scrollText: ". . . . . . . Overland Park has full-time position openings - visit recruit.opkansas.org . . . . . . . .",
+          color: new Color(colorNameToRgb["Red"])
+        },
+          Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+            { color: new Color(colorNameToRgb["Red"]) }),
+          Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+            { color: new Color(colorNameToRgb["Red"]) })
+        );
+                
   // const holidaysMessagesScene = new MessageScene(gridzilla, null, onPaused, nameManager,
   // {
   //   sampleMessages: holidaySampleMessages
@@ -428,13 +454,13 @@ function configureScenes(gridzilla, facade) {
   // const holidaysCheersScene = new CheerScene(gridzilla, onPaused, nameManager, {});
 
 
-  // const goChiefsImageScene = new ImageScene(gridzilla, onPaused,
-  //   {
-  //     period: 10000,
-  //     imagesConfiguration: [
-  //       { name: "Go Chiefs.png" }
-  //     ]
-  //   });
+  const goChiefsImageScene = new ImageScene(gridzilla, onPaused,
+    {
+      period: 10000,
+      imagesConfiguration: [
+        { name: "Go Chiefs.png" }
+      ]
+    });
 
   //show holiday images
   const holidayImageScene = new ImageScene(gridzilla, onPaused,
@@ -462,7 +488,7 @@ function configureScenes(gridzilla, facade) {
     {
       period: 29000,
       imagesConfiguration: [
-        { name: "Train_2022_V2.png", period: 29000 },
+        { name: "Train_CHIEFS_V2.png", period: 29000 },
       ]
     });
   
@@ -481,17 +507,15 @@ function configureScenes(gridzilla, facade) {
       perImagePeriod: 3000,
       imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
-        { name: "Enerfab Logo 36x168.gif" },
-        // { name: "Equipment Share Logo V1 (168x36).png" },
+        { name: "Blue Hat Logo (150x32 Non_Dithered).png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
-        { name: "Pretech Logo 36x168.gif" },
+        // { name: "Pretech Logo 36x168.gif" },
         { name: "KJO Logo (Dithered).png" },
         
         { name: "Foley Logo 36x168.gif" },
-        { name: "Enerfab Logo 36x168.gif" },
-        // { name: "Equipment Share Logo V1 (168x36).png" },
+        { name: "Blue Hat Logo (150x32 Non_Dithered).png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
-        { name: "Pretech Logo 36x168.gif" },
+        // { name: "Pretech Logo 36x168.gif" },
         { name: "KJO Logo (Dithered).png" }
         
         // { name: "Lowes_78x36_V2.png"},
@@ -511,7 +535,7 @@ function configureScenes(gridzilla, facade) {
 
   const thankYouScene = new ScrollingTextScene(gridzilla, null, onPaused,
     {
-      period: 34 * 1000,
+      period: 32 * 1000,
       headerText: "Thank you volunteers!",
       scrollText: teamMembers,
       // minimumInterval: 9 * 60 * 1000,
@@ -544,7 +568,7 @@ function configureScenes(gridzilla, facade) {
       scrollText: "             "
         + "                     "
         + "The Holiday Lights on Farmstead Lane show begins Thanksgiving evening.  "
-        + "The elves are busy getting the show ready.  "
+        + "The elves are busy preparing the show.  "
         + "Please come back to see the show."
         + " - - -    - - -    - - -",
       color: new Color(colorNameToRgb["Dark Red"])
@@ -563,7 +587,7 @@ function configureScenes(gridzilla, facade) {
         + "                     "
         + "... testing... testing ... testing ...  "
         + "... ... Is this thing on?  ... ..."
-        + " This is only a test. If this were the real show, you would be instructed to tune your radio to 90.5 and turn off your lights. This as been a test. "
+        + " This is only a test. If this were the real show, you would be instructed to tune your radio to 90.5 and turn off your lights. This has been a test. "
         + "Please come back to see the show."
         + " - - -    - - -    - - -",
       color: new Color(colorNameToRgb["Purple"])
@@ -614,18 +638,18 @@ function configureScenes(gridzilla, facade) {
       { color: new Color(colorNameToRgb["Dark Red"]) })
   );
 
-  // const goSportingScene = new ScrollingTextScene(gridzilla, null, onPaused,
-  //   {
-  //     period: 5000,
-  //     headerText: "GO SPORTING KC!",
-  //     scrollText: "            Go Sporting KC!   Go Sporting KC!   Go Sporting KC!             ",
-  //     color: new Color(colorNameToRgb["Midnight Blue"])
-  //   },
-  //   Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
-  //     { color: new Color(colorNameToRgb["Midnight Blue"]) }),
-  //   Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
-  //     { color: new Color(colorNameToRgb["Midnight Blue"]) })
-  // );
+  const goSportingScene = new ScrollingTextScene(gridzilla, null, onPaused,
+    {
+      period: 5000,
+      headerText: "GO SPORTING KC!",
+      scrollText: "            Go Sporting KC!   Go Sporting KC!   Go Sporting KC!             ",
+      color: new Color(colorNameToRgb["Midnight Blue"])
+    },
+    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Midnight Blue"]) }),
+    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Midnight Blue"]) })
+  );
 
   // const thanksFrontLineWorkersScene = new ScrollingTextScene(gridzilla, null, onPaused,
   //   {
@@ -658,7 +682,7 @@ function configureScenes(gridzilla, facade) {
       headerText: "Night of the Living Farm",
       scrollText: "                         "
         + " - - - Friday and Saturday Nights "
-        + " October 21, 22, 28, & 29 - "
+        + " October 20, 21, 27, & 28 - "
         + " 5:30PM to 9:00PM -    "
         + " Purchase tickets online at drfarmstead.org. - - - - - - - - -",
        color: new Color(colorNameToRgb["Orange"])
@@ -669,7 +693,20 @@ function configureScenes(gridzilla, facade) {
         { color: new Color(colorNameToRgb["Orange"]) } )
     );
 
-  // create scenes
+    // const nolfCanceledMessageScene = new ScrollingTextScene(gridzilla, null, onPaused,
+    //   {
+    //     // imageNames: eosImageNames,
+    //     headerText: "Night of the Living Farm Cancelled",
+    //     scrollText: "                         "
+    //       + " - - - Night of the Living Farm has been cancelled for tonight due to the weather. - - - - - - - - -",
+    //      color: new Color(colorNameToRgb["Orange"])
+    //     },
+    //     Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+    //       { color: new Color(colorNameToRgb["Orange"]) } ),
+    //     Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+    //       { color: new Color(colorNameToRgb["Orange"]) } )
+    //   );
+  
   const nolfMessageScene2 = new ScrollingTextScene(gridzilla, null, onPaused,
     {
       // imageNames: eosImageNames,
@@ -704,12 +741,13 @@ function configureScenes(gridzilla, facade) {
   function configureNolfScenes(gridzilla) {
     scenes = [
       nolfWelcomeBanner,
+      // nolfCanceledMessageScene,
       nolfMessageScene1,
       nolfMessageScene2,
       nolfImageScene,
       goChiefsScene,
-      nolfImageScene
-//      goSportingScene
+      nolfImageScene,
+      goSportingScene
     ];
   }
 
@@ -717,26 +755,31 @@ function configureScenes(gridzilla, facade) {
 
     scenes = [
       // testingMessageScene,
-      welcomeBanner, //red
+      // welcomeBanner, //red
       //preSeasonMessageScene,
-      instructionsBanner, //green
-      instructions2Banner, //red
-      //instructions3Banner,
-      instructions4Banner, //pink
-      kettleCornAd,
-      instructionsFacebook, //green
-      instructionsInstagram, //red
-      hashtagBanner, //green
-      thanksMarkBanner, //pink
-      headlightsBanner, //orange
-      holidayImageScene,
-      trainImageScene,
-      thankYouScene,
-      preLogosScene,
-      logosScene,
-      donationsScene,
-      goChiefsScene
-      // goSportingScene
+      // instructionsTuneTo, //green
+      opIsHiring1,
+      // instructionsFarmsteadDotCom, //red
+      //messagesDisabled,
+      // instructionsLanes, //pink
+      //kettleCornAd,
+      // instructionsFacebook, //green
+      // instructionsInstagram, //red
+      //hashtagBanner, //green
+      // thanksMarkBanner, //pink
+      // headlightsBanner, //orange
+      // holidayImageScene,
+      // trainImageScene,
+      // thankYouScene,
+     // kettleCornAd,
+       opIsHiring2,
+      // preLogosScene,
+      // logosScene,
+      //kettleCornAd,
+      // donationsScene,
+      //goChiefsImageScene,
+      // goChiefsScene
+      goSportingScene
       // cheersScene,
       // preSnakesBanner,
       // snakeScene,
@@ -759,8 +802,8 @@ function configureScenes(gridzilla, facade) {
       //thankYouScene,
       preLogosScene,
       logosScene,
-      goChiefsScene
-      // goSportingScene,
+      goChiefsScene,
+      goSportingScene,
     ];
 
   }
