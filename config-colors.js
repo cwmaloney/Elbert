@@ -24,7 +24,8 @@ const colorNameToRgb = {
   Fuchsia: [ 255, 0, 255 ],
   Magenta: [ 255, 0, 255 ],
   
-  Orange: [ 255, 127, 0 ],
+  OrangeOld: [ 255, 127, 0 ],
+  Orange: [ 225, 60, 0 ],
   "Orange Red": [255, 69, 0],
 
   Yellow: [ 255, 255, 0 ],
