@@ -329,11 +329,24 @@ function configureScenes(gridzilla, facade) {
       period: 3000
     });
 
+    const veteransInstructionsTuneTo = new ScrollingTextScene(gridzilla, null, onPaused,
+      {
+        period: 20000,
+        headerText: "Tune to 90.5 FM",
+        scrollText: "             Tune your radio to 90.5 FM to hear the music.      ",
+        color: new Color(colorNameToRgb["Blue"])
+      },
+      Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Blue"]) }),
+      Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+        { color: new Color(colorNameToRgb["Blue"]) })
+    );
+  
   const instructionsTuneTo = new BannerScene(gridzilla, onPaused,
     {
       //The spaces get the messages centered, apparently our length estimate and centering code isn't perfect
-      line1: "Tune to 90.5 FM  ",
-      line2: " to hear the music.",
+      line1: "Tune to 90.5 FM",
+      line2: "to hear the music.",
       line3: "Please turn off your headlights.",
       color: new Color(colorNameToRgb["Green"])
     });
@@ -353,6 +366,7 @@ function configureScenes(gridzilla, facade) {
         line2: "headlights off",
         color: new Color(colorNameToRgb["Orange"])
       });
+  
   // const messagesDisabled = new BannerScene(gridzilla, onPaused,
   //   {
   //     line1: "The message and cheer features ",
@@ -507,13 +521,13 @@ function configureScenes(gridzilla, facade) {
       perImagePeriod: 3000,
       imagesConfiguration: [
         { name: "Foley Logo 36x168.gif" },
-        { name: "Blue Hat Logo (150x32 Non_Dithered).png" },
+        { name: "Blue Hat Logo (150x32 Non_Dithered) V2.png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
         // { name: "Pretech Logo 36x168.gif" },
         { name: "KJO Logo (Dithered).png" },
         
         { name: "Foley Logo 36x168.gif" },
-        { name: "Blue Hat Logo (150x32 Non_Dithered).png" },
+        { name: "Blue Hat Logo (150x32 Non_Dithered) V2.png" },
         { name: "Jolt Lighting Logo 36x106.gif" },
         // { name: "Pretech Logo 36x168.gif" },
         { name: "KJO Logo (Dithered).png" }
@@ -665,8 +679,21 @@ function configureScenes(gridzilla, facade) {
   //     { color: new Color(colorNameToRgb["Blue"]) } )
   // );
 
+  const thanksVeteransScene = new ScrollingTextScene(gridzilla, null, onPaused,
+    {
+      period: 8000,
+      headerText: "Thanks!",
+      scrollText: "         Thank you Veterans!         ",
+      color: new Color(colorNameToRgb["Blue"])
+    },
+    Object.assign(gridzillaDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Blue"]) } ),
+    Object.assign(facadeDefaults.scrollSceneDefaultsWithHeader,
+      { color: new Color(colorNameToRgb["Blue"]) } )
+  );
+
   // create scenes
-  const nolfWelcomeBanner = new BannerScene(gridzilla, onPaused,
+  const farmsteadWelcomeBanner = new BannerScene(gridzilla, onPaused,
     {
       line1: "Welcome to",
       line2: "Deanna Rose",
@@ -740,7 +767,7 @@ function configureScenes(gridzilla, facade) {
 
   function configureNolfScenes(gridzilla) {
     scenes = [
-      nolfWelcomeBanner,
+      farmsteadWelcomeBanner,
       // nolfCanceledMessageScene,
       nolfMessageScene1,
       nolfMessageScene2,
@@ -805,7 +832,26 @@ function configureScenes(gridzilla, facade) {
       goChiefsScene,
       goSportingScene,
     ];
+  }
 
+  function configureVeteransScenes(gridzilla) {
+    scenes = [
+      //testingMessageScene,
+      farmsteadWelcomeBanner,
+      veteransInstructionsTuneTo,
+      thanksVeteransScene,
+      //preSeasonImageScene,
+      //holidayImageScene,
+      //trainImageScene,
+      //thankYouScene,
+      preLogosScene,
+      logosScene,
+      goChiefsScene,
+      goSportingScene,
+      thanksVeteransScene,
+      preSeasonMessageScene,
+      thanksVeteransScene
+    ];
   }
 
   function configureValentineScenes(gridzilla, facade) {
@@ -943,6 +989,8 @@ function configureScenes(gridzilla, facade) {
     configureHolidayScenes(gridzilla);
   else if (show === "NOLF")
     configureNolfScenes(gridzilla);
+  else if (show === "Veterans")
+    configureVeteransScenes(gridzilla);
   else if (show === "PreSeason")
     configurePreSeasonScenes(gridzilla);
   else if (show === "EOS")
