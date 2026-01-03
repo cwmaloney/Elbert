@@ -292,10 +292,11 @@ const facadeDefaults = {
 const teamMembers =
   "                       Mark Callegari,"
   + " Chris Callegari,"
+  + " Holly, Melina, Pat, & Andy Callegari,"
   + " Blake Stewart,"
-  + " Chris Maloney,"
   + " Bill Jones,"
-  + " & Ken & Min Vrana"
+  + " Min & Ken Vrana,"
+  + " and Rachel & Chris Maloney"
   // + " Mike McCamon,"
   // + " & Steve Bullard."
   + "                              ";
@@ -830,7 +831,7 @@ function configureScenes(gridzilla, facade) {
       //preSeasonMessageScene,
       instructionsTuneTo, //green
       // opIsHiring1,
-      instructionsFarmsteadDotCom, //red
+      // instructionsFarmsteadDotCom, //red
       //messagesDisabled,
       instructionsLanes, //pink
       pleaseStayInYourCars,
@@ -840,6 +841,7 @@ function configureScenes(gridzilla, facade) {
       //hashtagBanner, //green
       thanksMarkBanner, //pink
       // headlightsBanner, //orange
+      
       holidayImageScene,
       thankYouScene,
       trainImageScene,
@@ -851,8 +853,8 @@ function configureScenes(gridzilla, facade) {
       //goChiefsImageScene,
       goChiefsScene,
       //goSportingScene,
-      opIsHiring2,
-      thanksCert,
+      // opIsHiring2,
+      // thanksCert,
       // cheersScene,
       // preSnakesBanner,
       // snakeScene,
