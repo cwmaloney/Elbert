@@ -1,2 +1,2 @@
-cd \projects\drcf2018
-node grizilla.js
+cd \Code\Elbert
+node .\holidayLights.js
