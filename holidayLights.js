@@ -291,14 +291,15 @@ const facadeDefaults = {
 
 const teamMembers =
   "   Mark Callegari,"
-  + " Chris Callegari, Jovan Brown"
+  + " Chris Callegari, Jovan Brown,"
   + " Nancy & Bill Jones,"
   + " Min & Ken Vrana,"
   + " Rachel & Chris Maloney,"
   + " Mark Sutton,"
   + " Blake Stewart,"
+  + " Elliot Maloney,"
   + " Holly, Melina, Pat, & Andy Callegari, "
-  + " Scott Garmerl"
+  + " Scott Garmerl."
   + "                              ";
 
 // const companies =
@@ -505,6 +506,14 @@ function configureScenes(gridzilla, facade) {
       period: 10000,
       imagesConfiguration: [
         { name: "Go Chiefs.png" }
+      ]
+    });
+
+  const qrCodeScene = new ImageScene(gridzilla, onPaused,
+    {
+      period: 20000,
+      imagesConfiguration: [
+        { name: "fofQrCodeBW.png" }
       ]
     });
 
@@ -830,9 +839,6 @@ function configureScenes(gridzilla, facade) {
       welcomeBanner, //red
       //preSeasonMessageScene,
       instructionsTuneTo, //green
-      // opIsHiring1,
-      // instructionsFarmsteadDotCom, //red
-      //messagesDisabled,
       instructionsLanes, //pink
       pleaseStayInYourCars,
       //kettleCornAd,
@@ -846,9 +852,7 @@ function configureScenes(gridzilla, facade) {
       thankYouScene,
       trainImageScene,
       // kettleCornAd,
-      preLogosScene,
       logosScene,
-      //kettleCornAd,
       donationsScene,
       //goChiefsImageScene,
       goChiefsScene,
@@ -867,18 +871,13 @@ function configureScenes(gridzilla, facade) {
 
     scenes = [
       testingMessageScene,
-      //nolfWelcomeBanner,
-      //welcomeBanner,
       preSeasonMessageScene,
-      //thanksFrontLineYouScene,
-      //preSeasonImageScene,
+      qrCodeScene,
       holidayImageScene,
       trainImageScene,
-      //thankYouScene,
       preLogosScene,
       logosScene,
-      goChiefsScene,
-      // goSportingScene,
+      goChiefsScene
     ];
   }
 
